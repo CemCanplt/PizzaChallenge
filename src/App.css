@@ -1,11 +1,25 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-page header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
+.aciktim {
+  flex: 0 0 auto;
+  cursor: pointer;
+  
+}
 
 @media (prefers-reduced-motion: no-preference) {
- 
 }
