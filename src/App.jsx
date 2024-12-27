@@ -7,7 +7,14 @@ import MainPage from "./Components/Pages/MainPage";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <MainPage />;
+  return (
+    <div className="pizza-king">
+      <header className="never-changing-title">
+        <h1>Teknolojik Yemekler</h1>
+      </header>
+      <MainPage />
+    </div>
+  );
 }
 
 export default App;

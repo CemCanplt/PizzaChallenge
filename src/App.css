@@ -1,11 +1,18 @@
 #root {
-  padding: 2rem;
+}
+
+.pizza-king {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: #ce2829;
+  padding: 0 2rem 2rem 2rem;
 }
 
 .main-page header {
@@ -13,12 +20,38 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 1.5rem;
 }
 
-.aciktim {
-  flex: 0 0 auto;
+.main-page .aciktim {
   cursor: pointer;
-  
+  background-color: #fdc913;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.main-page p {
+  font-family: "Barlow";
+  font-weight: 250; 
+  font-size: 3.5rem;
+  color: #faf7f2;
+  margin: 0;
+  text-align: center;
+}
+
+.never-changing-title h1 {
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  color: #faf7f2;
+  background-color: #ce2829;
+  text-align: center;
+  padding: 2rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
