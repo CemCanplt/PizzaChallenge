@@ -11,7 +11,12 @@ function MainPage() {
           PİZZA, DOYURUR
         </p>
       </header>
-      <button className="aciktim">ACIKTIM</button>
+      <button
+        className="aciktim"
+        onClick={null /* sonra eklenecek handleClick */}
+      >
+        ACIKTIM
+      </button>
     </div>
   );
 }
