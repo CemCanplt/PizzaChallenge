@@ -1,18 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import workintech from "/workintech.svg";
 import "./App.css";
 import MainPage from "./Components/Pages/MainPage";
+import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <div className="pizza-king">
       <header className="never-changing-title">
         <h1>Teknolojik Yemekler</h1>
       </header>
-      <MainPage />
+      <Switch>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
+        <Route exact path="/siparis">
+          {/* Burada sipariş ekranı */}
+        </Route>
+        <Route path="/siparis/basarili">
+          {/* Burada sipariş başarılı ekranı */}
+        </Route>
+      </Switch>
     </div>
   );
 }
