@@ -1,6 +1,3 @@
-#root {
-}
-
 .pizza-king {
   display: flex;
   flex-direction: column;
@@ -64,8 +61,6 @@
 .big-pizza {
   max-width: 70rem;
 }
-
-
 
 @media (prefers-reduced-motion: no-preference) {
 }
