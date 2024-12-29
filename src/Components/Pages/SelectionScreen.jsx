@@ -1,9 +1,26 @@
 import { useState } from "react";
 import "./SelectionScreen.css";
-import Checkbox from './Mini-Component/Checkbox.jsx'
+import Checkbox from "./Mini-Component/Checkbox.jsx";
+
+const malzemeler = [
+  "Pepperoni",
+  "Sosis",
+  "Kanada Jambonu",
+  "Tavuk Izgara",
+  "Soğan",
+  "Domates",
+  "Mısır",
+  "Sucuk",
+  "Jalepeno",
+  "Sarımsak",
+  "Biber",
+  "Sucuk",
+  "Ananas",
+  "Kabak",
+];
 
 function SelectionScreen() {
-   const [] = useState()
+  const [checkboxlar, setCheckboxlar] = useState(malzemeler);
   return (
     <div className="siparis-page">
       <form>
@@ -79,7 +96,11 @@ function SelectionScreen() {
         <div className="ek-malzeme">
           <h2>Ek Malzemeler</h2>
           <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
-          <Checkbox />
+          <div className="checkbox">
+            {malzemeler.map((malzeme) => {
+              return <Checkbox malzeme={malzeme} key={malzeme} />;
+            })}
+          </div>
         </div>
       </form>
     </div>
