@@ -10,7 +10,6 @@ const malzemeler = [
   "Soğan",
   "Domates",
   "Mısır",
-  "Sucuk",
   "Jalepeno",
   "Sarımsak",
   "Biber",
@@ -21,6 +20,22 @@ const malzemeler = [
 
 function SelectionScreen() {
   const [checkboxlar, setCheckboxlar] = useState(malzemeler);
+  const [counter, setCounter] = useState(1);
+
+  function counterHandler(event) {
+    const { name } = event.target;
+    if (name === "eksi") {
+      if (counter == 1) {
+        return;
+      } else {
+        setCounter(counter - 1);
+      }
+    }
+    if (name === "artı") {
+      setCounter(counter + 1);
+    }
+  }
+
   return (
     <div className="siparis-page">
       <form>
@@ -100,6 +115,26 @@ function SelectionScreen() {
             {malzemeler.map((malzeme) => {
               return <Checkbox malzeme={malzeme} key={malzeme} />;
             })}
+          </div>
+        </div>
+        <div className="siparis-notu">
+          <h2>Sipariş Notu</h2>
+          <textarea
+            name="not"
+            id="not"
+            placeholder="Siparişine eklemek istediğin bir not var mı?"
+          ></textarea>
+        </div>
+        <div className="divider"></div>
+        <div className="counter-siparis">
+          <div className="counter">
+            <button name="eksi" onClick={counterHandler} type="button">
+              -
+            </button>
+            <p>{counter}</p>
+            <button name="artı" onClick={counterHandler} type="button">
+              +
+            </button>
           </div>
         </div>
       </form>

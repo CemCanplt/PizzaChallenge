@@ -40,3 +40,38 @@
   gap: 0.2rem;
 }
 
+.siparis-notu textarea {
+  min-width: 100%;
+  height: 4rem;
+  display: flex;
+  border-radius: 0.5rem;
+}
+
+.siparis-notu textarea::placeholder {
+  /* Yatayda ortalar */
+}
+
+.divider {
+  border-top: 1px solid;
+  margin: 2rem 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.counter p {
+  display: flex;
+  border: 1px solid black;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter p,
+.counter button {
+  width: 2rem;
+  height: 2rem;
+}
