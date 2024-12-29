@@ -1,6 +1,9 @@
 import React from "react"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function MainPage() {
+  const history = useHistory()
+
   return (
     <div className="main-page">
       <div className="text-pic-gap">
@@ -11,7 +14,7 @@ function MainPage() {
         </p>
         <button
           className="aciktim"
-          onClick={null /* sonra eklenecek handleClick */}
+          onClick={()=> history.push("/siparis")}
         >
           ACIKTIM
         </button>

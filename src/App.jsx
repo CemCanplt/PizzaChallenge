@@ -1,9 +1,9 @@
 import "./App.css";
 import MainPage from "./Components/Pages/MainPage";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import SelectionScreen from "./Components/Pages/SelectionScreen";
 
 function App() {
-
   return (
     <div className="pizza-king">
       <header className="never-changing-title">
@@ -14,7 +14,7 @@ function App() {
           <MainPage />
         </Route>
         <Route exact path="/siparis">
-          {/* Burada sipariş ekranı */}
+          <SelectionScreen />
         </Route>
         <Route path="/siparis/basarili">
           {/* Burada sipariş başarılı ekranı */}
