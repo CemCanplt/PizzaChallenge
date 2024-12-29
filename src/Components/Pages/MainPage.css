@@ -7,7 +7,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  flex: 1 1 auto;
+  z-index: 10;
 }
 
 .text-pic-gap {
@@ -44,17 +45,6 @@
   color: #faf7f2;
   margin: 0;
   text-align: center;
-}
-
-.never-changing-title h1 {
-  font-family: "Roboto Condensed";
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0;
-  color: #faf7f2;
-  background-color: #ce2829;
-  text-align: center;
-  padding: 2rem 0;
 }
 
 .big-pizza {

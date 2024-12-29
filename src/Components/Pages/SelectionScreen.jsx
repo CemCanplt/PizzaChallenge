@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./SelectionScreen.css";
+import Checkbox from './Mini-Component/Checkbox.jsx'
 
 function SelectionScreen() {
+   const [] = useState()
   return (
     <div className="siparis-page">
       <form>
@@ -33,27 +36,33 @@ function SelectionScreen() {
         <div className="boyut-hamur">
           <div className="boyut">
             <h2>Boyut Seç</h2>
-            <label htmlFor="kucukPizza">Küçük</label>
-            <input
-              type="radio"
-              id="kucukPizza"
-              name="kucukPizza"
-              value={null}
-            ></input>
-            <label htmlFor="ortaPizza">Orta</label>
-            <input
-              type="radio"
-              id="ortaPizza"
-              name="ortaPizza"
-              value={null}
-            ></input>
-            <label htmlFor="buyukPizza">Büyük</label>
-            <input
-              type="radio"
-              id="buyukPizza"
-              name="buyukPizza"
-              value={null}
-            ></input>
+            <div>
+              <input
+                type="radio"
+                id="kucukPizza"
+                name="kucukPizza"
+                value={null}
+              ></input>
+              <label htmlFor="kucukPizza"> Küçük</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="ortaPizza"
+                name="ortaPizza"
+                value={null}
+              ></input>
+              <label htmlFor="ortaPizza"> Orta</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="buyukPizza"
+                name="buyukPizza"
+                value={null}
+              ></input>
+              <label htmlFor="buyukPizza"> Büyük</label>
+            </div>
           </div>
           <div className="hamur">
             <h2>Hamur Seç</h2>
@@ -66,6 +75,11 @@ function SelectionScreen() {
               <option value="Kalın Hamur">Kalın Hamur</option>
             </select>
           </div>
+        </div>
+        <div className="ek-malzeme">
+          <h2>Ek Malzemeler</h2>
+          <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+          <Checkbox />
         </div>
       </form>
     </div>
