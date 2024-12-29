@@ -2,6 +2,7 @@ import "./App.css";
 import MainPage from "./Components/Pages/MainPage";
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import SelectionScreen from "./Components/Pages/SelectionScreen";
+import FinishingPage from "./Components/Pages/FinishingPage"
 
 function App() {
   return (
