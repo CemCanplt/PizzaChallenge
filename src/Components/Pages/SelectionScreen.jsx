@@ -5,9 +5,10 @@ function SelectionScreen() {
       <div className="aciklama-bilgi">
         <div className="para-puan">
           <h1>85.50₺</h1>
-          <div>
+          <div className="yildiz-skor">
             <p>4.9</p>
             <p>
+              <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>

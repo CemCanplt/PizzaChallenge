@@ -1,3 +1,9 @@
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .pizza-king {
   display: flex;
   flex-direction: column;
@@ -60,6 +66,33 @@
 
 .big-pizza {
   max-width: 70rem;
+}
+
+/* Sipariş Sayfası */
+
+.siparis-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 35rem;
+  margin: 0 auto;
+}
+
+.aciklama-bilgi {
+  display: flex;
+  flex-direction: column;
+}
+
+.yildiz-skor {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.para-puan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
