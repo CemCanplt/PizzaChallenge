@@ -1,5 +1,6 @@
 body, html {
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -9,91 +10,6 @@ body, html {
   flex-direction: column;
 }
 
-.main-page {
-  display: flex;
-  flex-direction: column;
-  background-color: #ce2829;
-  gap: 4rem;
-  align-items: center;
-}
-
-.text-pic-gap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  padding: 0rem 2rem;
-}
-
-.text-pic-gap header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  gap: 1.5rem;
-}
-
-.text-pic-gap .aciktim {
-  cursor: pointer;
-  background-color: #fdc913;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  font-family: "Roboto Condensed";
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.text-pic-gap p {
-  font-family: "Barlow";
-  font-weight: 250;
-  font-size: 3.5rem;
-  color: #faf7f2;
-  margin: 0;
-  text-align: center;
-}
-
-.never-changing-title h1 {
-  font-family: "Roboto Condensed";
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0;
-  color: #faf7f2;
-  background-color: #ce2829;
-  text-align: center;
-  padding: 2rem 0;
-}
-
-.big-pizza {
-  max-width: 70rem;
-}
-
-/* Sipariş Sayfası */
-
-.siparis-page {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 2rem;
-  max-width: 35rem;
-  margin: 0 auto;
-}
-
-.aciklama-bilgi {
-  display: flex;
-  flex-direction: column;
-}
-
-.yildiz-skor {
-  display: flex;
-  gap: 0.3rem;
-}
-
-.para-puan {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 @media (prefers-reduced-motion: no-preference) {
 }
