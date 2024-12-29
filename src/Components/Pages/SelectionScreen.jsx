@@ -19,7 +19,6 @@ const malzemeler = [
 ];
 
 function SelectionScreen() {
-  const [checkboxlar, setCheckboxlar] = useState(malzemeler);
   const [counter, setCounter] = useState(1);
   const [toplamUcret, setToplamUcret] = useState(110.5);
 
