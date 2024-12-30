@@ -40,10 +40,13 @@
   gap: 0.2rem;
 }
 
-.siparis-notu textarea {
-  min-width: 100%;
-  height: 4rem;
+.siparis-notu {
   display: flex;
+  flex-direction: column;
+}
+
+.siparis-notu textarea {
+  height: 4rem;
   border-radius: 0.5rem;
 }
 
@@ -56,7 +59,8 @@
   margin: 2rem 0;
 }
 
-.counter {
+.counter,
+.counter-gizli {
   display: flex;
   align-items: center;
   align-content: center;
@@ -64,7 +68,8 @@
   margin: 0;
 }
 
-.counter p {
+.counter p,
+.counter-gizli p {
   display: flex;
   border: 1px solid #5f5f5f;
   text-align: center;
@@ -74,12 +79,15 @@
 }
 
 .counter p,
+.counter-gizli p,
+.counter-gizli button,
 .counter button {
   width: 2.5rem;
   height: 3rem;
 }
 
-.counter button {
+.counter button,
+.counter-gizli button {
   background-color: #fdc913;
   border: none;
   border-radius: 0.2rem;
@@ -101,6 +109,11 @@
   justify-content: center;
   min-width: 15rem;
   padding: 1.5rem 2rem;
+  width: 100%; /* Elemanın genişliğini ekranın tamamına yay */
+  max-width: 100%; /* Herhangi bir daraltma kuralını kaldır */
+  margin: 0; /* Kenar boşluklarını sıfırla */
+  padding: 0; /* İç boşlukları sıfırla */
+  box-sizing: border-box; /* Taşmaları önlemek için kutu modelini ayarla */
 }
 
 .siparis-hesap h4 {
@@ -152,4 +165,41 @@
 .theSayfa {
   display: flex;
   flex-direction: column;
+  width: 100%; /* Ebeveyn genişliği */
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Taşmaları önler */
+}
+
+.counter-gizli {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .counter {
+    display: none;
+  }
+
+  .counter-gizli {
+    display: flex;
+  }
+
+  .siparis-page {
+    width: 100vw; /* Genişliği tam ekran yap */
+    height: auto; /* Gerekirse yüksekliği ayarla */
+    padding: 10px; /* İç boşluk ekle */
+  }
+
+  .siparis-hesap {
+    padding: 1rem;
+    align-items: stretch;
+   
+  }
+  .siparis-tusu button {
+    min-width: 0; /* Ekleme */
+    flex-grow: 1; /* Ekleme */
+  }
+  .counter-siparis {
+    justify-content: center;
+  }
 }

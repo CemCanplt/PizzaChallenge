@@ -84,7 +84,7 @@ function SelectionScreen() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    history.push("./siparis/basarili")
+    history.push("./siparis/basarili");
   }
 
   return (
@@ -219,6 +219,15 @@ function SelectionScreen() {
                 </div>
               </div>
               <div className="siparis-tusu">
+                <div className="counter-gizli">
+                  <button name="eksi" onClick={counterHandler} type="button">
+                    -
+                  </button>
+                  <p>{counter}</p>
+                  <button name="artı" onClick={counterHandler} type="button">
+                    +
+                  </button>
+                </div>
                 <button>SİPARİŞ VER</button>
               </div>
             </div>

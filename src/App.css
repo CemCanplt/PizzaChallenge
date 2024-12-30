@@ -29,5 +29,9 @@ html {
   padding: 2rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+  
 }
