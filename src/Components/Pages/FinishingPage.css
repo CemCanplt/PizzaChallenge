@@ -1,0 +1,14 @@
+.tebrik-ekrani {
+  display: flex;
+  justify-content: center;
+  background-color: #ce2829;
+  text-align: center;
+  color: #faf7f2;
+  flex: 1 1 auto
+}
+
+.tebrik-ekrani h1 {
+  font-family: "Roboto Condensed";
+  font-weight: 200; /* Daha ince bir ağırlık */
+}
+
