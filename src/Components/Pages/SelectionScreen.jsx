@@ -38,11 +38,11 @@ function SelectionScreen() {
     setEkUcret(
       formData.hamurSecimi + formData.hamurTipi + formData.ekMalzeme.length * 5
     );
-  }, [formData]);
+  }, [formData, counter]);
 
   useEffect(() => {
-    setToplamUcret(ekUcret + 85.5);
-  }, [ekUcret]);
+    setToplamUcret((ekUcret + 85.5) * counter);
+  }, [ekUcret, counter]);
 
   function handleFiyat(event) {
     const { name, value, checked } = event.target;
@@ -195,8 +195,8 @@ function SelectionScreen() {
             ></textarea>
           </div>
           <div className="divider"></div>
-          <div className="counter-siparis">
-            <div className="counter">
+          <div className="odeme-bolumu">
+            <div className="adet-sayaci">
               <button name="eksi" onClick={counterHandler} type="button">
                 -
               </button>
@@ -205,8 +205,7 @@ function SelectionScreen() {
                 +
               </button>
             </div>
-
-            <div className="siparis-hesap-button">
+            <div className="siparis-fiyat-odeme">
               <div className="siparis-hesap">
                 <h4>Sipariş Toplamı</h4>
                 <div className="secimler">
