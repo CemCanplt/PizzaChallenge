@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./SelectionScreen.css";
 import Checkbox from "./Mini-Component/Checkbox.jsx";
+import { useHistory } from "react-router-dom";
 
 const malzemeler = [
   "Pepperoni",
@@ -18,19 +19,52 @@ const malzemeler = [
   "Kabak",
 ];
 
+const ekPara = {
+  hamurSecimi: 0,
+  hamurTipi: 0,
+  ekMalzeme: [],
+  not: "",
+};
+
 function SelectionScreen() {
   const [counter, setCounter] = useState(1);
   const [toplamUcret, setToplamUcret] = useState(110.5);
-  const [ekUcret, setEkUcret] = useState(0)
+  const [ekUcret, setEkUcret] = useState(0);
+  const [formData, setFormData] = useState(ekPara);
+
+  const history = useHistory();
+
+  useEffect(() => {
+    setEkUcret(
+      formData.hamurSecimi + formData.hamurTipi + formData.ekMalzeme.length * 5
+    );
+  }, [formData]);
+
+  useEffect(() => {
+    setToplamUcret(ekUcret + 85.5);
+  }, [ekUcret]);
 
   function handleFiyat(event) {
-    const {name, value, checked} = event.target
-    if(name === "hamurSecimi") {
-        const ucret = value.match(/\d+/)[0]
-        if(checked) {
+    const { name, value, checked } = event.target;
 
-        }
-        
+    if (name == "hamurSecimi" || name == "hamurTipi") {
+      const ucret = Number(value);
+      setFormData({ ...formData, [name]: ucret });
+    }
+
+    if (name == "ekMalzeme") {
+      if (checked) {
+        setFormData({ ...formData, [name]: [...formData[name], value] });
+      } else {
+        setFormData({
+          ...formData,
+          [name]: formData[name].filter((item) => item !== value),
+        });
+      }
+    }
+
+    if (name === "not") {
+      setFormData({ ...formData, [name]: value });
     }
   }
 
@@ -48,13 +82,18 @@ function SelectionScreen() {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    history.push("./siparis/basarili")
+  }
+
   return (
     <div className="theSayfa">
       <div className="sayfa-yolu">
         <p>Anasayfa-Seçenekler-Sipariş Oluştur</p>
       </div>
       <div className="siparis-page">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h2>Position Absolute Pizza</h2>
           <div className="aciklama-bilgi">
             <div className="para-puan">
@@ -89,7 +128,9 @@ function SelectionScreen() {
                   type="radio"
                   id="kucukPizza"
                   name="hamurSecimi"
-                  value="Küçük 0"
+                  value="0"
+                  onChange={handleFiyat}
+                  defaultChecked
                 ></input>
                 <label htmlFor="kucukPizza"> Küçük</label>
               </div>
@@ -98,7 +139,8 @@ function SelectionScreen() {
                   type="radio"
                   id="ortaPizza"
                   name="hamurSecimi"
-                  value="Orta 10"
+                  value="10"
+                  onChange={handleFiyat}
                 ></input>
                 <label htmlFor="ortaPizza"> Orta</label>
               </div>
@@ -107,20 +149,21 @@ function SelectionScreen() {
                   type="radio"
                   id="buyukPizza"
                   name="hamurSecimi"
-                  value="Büyük 20"
+                  value="20"
+                  onChange={handleFiyat}
                 ></input>
                 <label htmlFor="buyukPizza"> Büyük</label>
               </div>
             </div>
             <div className="hamur">
               <h2>Hamur Seç</h2>
-              <select id="hamurTipi" name="hamurTipi">
+              <select id="hamurTipi" name="hamurTipi" onChange={handleFiyat}>
                 <option value="Hamur Seçimi" selected disabled hidden>
                   Hamur Kalınlığı
                 </option>
-                <option value="İnce Hamur 20">İnce Hamur</option>
-                <option value="Orta Hamur 0">Orta Hamur</option>
-                <option value="Kalın Hamur 10">Kalın Hamur</option>
+                <option value="20">İnce Hamur</option>
+                <option value="0">Orta Hamur</option>
+                <option value="10">Kalın Hamur</option>
               </select>
             </div>
           </div>
@@ -129,7 +172,15 @@ function SelectionScreen() {
             <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
             <div className="checkbox">
               {malzemeler.map((malzeme) => {
-                return <Checkbox malzeme={malzeme} key={malzeme} />;
+                return (
+                  <Checkbox
+                    setFormData={setFormData}
+                    formData={formData}
+                    malzeme={malzeme}
+                    key={malzeme}
+                    handleFiyat={handleFiyat}
+                  />
+                );
               })}
             </div>
           </div>
@@ -139,6 +190,8 @@ function SelectionScreen() {
               name="not"
               id="not"
               placeholder="Siparişine eklemek istediğin bir not var mı?"
+              value={formData.not}
+              onChange={handleFiyat}
             ></textarea>
           </div>
           <div className="divider"></div>

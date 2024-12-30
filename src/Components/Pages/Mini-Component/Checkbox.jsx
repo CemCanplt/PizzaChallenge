@@ -1,12 +1,18 @@
-import "./CheckBox.css"
+import "./CheckBox.css";
 
 function CheckBox(props) {
-    const {malzeme} = props
-    const id = malzeme.toLowerCase()
+  const { malzeme, handleFiyat } = props;
+  const id = malzeme.toLowerCase();
 
   return (
     <div className="checkbox-container">
-      <input type="checkbox" id={id} name={id} value={id} />
+      <input
+        type="checkbox"
+        id={id}
+        name="ekMalzeme"
+        value={id}
+        onChange={handleFiyat}
+      />
       <label htmlFor={id}>{malzeme}</label>
     </div>
   );

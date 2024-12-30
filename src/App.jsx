@@ -18,7 +18,7 @@ function App() {
           <SelectionScreen />
         </Route>
         <Route path="/siparis/basarili">
-          {/* Burada sipariş başarılı ekranı */}
+          <FinishingPage />
         </Route>
       </Switch>
     </div>
