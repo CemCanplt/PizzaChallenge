@@ -59,7 +59,28 @@
   margin: 2rem 0;
 }
 
+.adet-sayaci,
+.gizli-adet-sayaci {
+  display: flex;
+  align-items: center;
+}
 
+.adet-sayaci p,
+.gizli-adet-sayaci p {
+  border: 1px solid #5f5f5f;
+  margin: 0;
+  padding: 1rem ;
+  justify-content: center;
+}
+
+.adet-sayaci button,
+.gizli-adet-sayaci button {
+  background-color: #fdc913;
+  border: 1px solid #5f5f5f;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  margin: 0;
+}
 
 .sayfa-yolu {
   display: flex;
@@ -79,10 +100,9 @@
   flex-direction: column;
 }
 
-.counter-gizli {
+.gizli-adet-sayaci {
   display: none;
 }
 
 @media (max-width: 600px) {
-  
 }

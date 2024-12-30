@@ -195,6 +195,7 @@ function SelectionScreen() {
             ></textarea>
           </div>
           <div className="divider"></div>
+
           <div className="odeme-bolumu">
             <div className="adet-sayaci">
               <button name="eksi" onClick={counterHandler} type="button">
@@ -208,17 +209,17 @@ function SelectionScreen() {
             <div className="siparis-fiyat-odeme">
               <div className="siparis-hesap">
                 <h4>Sipariş Toplamı</h4>
-                <div className="secimler">
+                <div className="secimler-satiri">
                   <p>Seçimler</p>
                   <p>{ekUcret}₺</p>
                 </div>
-                <div className="toplam">
+                <div className="toplam-fiyat-satiri">
                   <p>Toplam</p>
                   <p>{toplamUcret}₺</p>
                 </div>
               </div>
-              <div className="siparis-tusu">
-                <div className="counter-gizli">
+              <div className="siparis-ver-tusu">
+                <div className="gizli-adet-sayaci">
                   <button name="eksi" onClick={counterHandler} type="button">
                     -
                   </button>
