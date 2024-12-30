@@ -109,11 +109,6 @@
   justify-content: center;
   min-width: 15rem;
   padding: 1.5rem 2rem;
-  width: 100%; /* Elemanın genişliğini ekranın tamamına yay */
-  max-width: 100%; /* Herhangi bir daraltma kuralını kaldır */
-  margin: 0; /* Kenar boşluklarını sıfırla */
-  padding: 0; /* İç boşlukları sıfırla */
-  box-sizing: border-box; /* Taşmaları önlemek için kutu modelini ayarla */
 }
 
 .siparis-hesap h4 {
@@ -165,10 +160,6 @@
 .theSayfa {
   display: flex;
   flex-direction: column;
-  width: 100%; /* Ebeveyn genişliği */
-  padding: 0;
-  margin: 0;
-  overflow: hidden; /* Taşmaları önler */
 }
 
 .counter-gizli {
@@ -184,16 +175,11 @@
     display: flex;
   }
 
-  .siparis-page {
-    width: 100vw; /* Genişliği tam ekran yap */
-    height: auto; /* Gerekirse yüksekliği ayarla */
-    padding: 10px; /* İç boşluk ekle */
-  }
-
   .siparis-hesap {
     padding: 1rem;
+    flex-grow: 1; /* Ekleme */
     align-items: stretch;
-   
+    
   }
   .siparis-tusu button {
     min-width: 0; /* Ekleme */
@@ -201,5 +187,6 @@
   }
   .counter-siparis {
     justify-content: center;
+    
   }
 }
