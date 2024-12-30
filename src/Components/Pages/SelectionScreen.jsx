@@ -209,13 +209,13 @@ function SelectionScreen() {
             <div className="siparis-fiyat-odeme">
               <div className="siparis-hesap">
                 <h4>Sipariş Toplamı</h4>
-                <div className="secimler-satiri">
-                  <p>Seçimler</p>
-                  <p>{ekUcret}₺</p>
+                <div className="row">
+                  <span>Seçimler</span>
+                  <span>{ekUcret}₺</span>
                 </div>
-                <div className="toplam-fiyat-satiri">
-                  <p>Toplam</p>
-                  <p>{toplamUcret}₺</p>
+                <div className="row-total">
+                  <span>Toplam</span>
+                  <span>{toplamUcret}₺</span>
                 </div>
               </div>
               <div className="siparis-ver-tusu">
