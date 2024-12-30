@@ -31,8 +31,14 @@ function SelectionScreen() {
   const [toplamUcret, setToplamUcret] = useState(110.5);
   const [ekUcret, setEkUcret] = useState(0);
   const [formData, setFormData] = useState(ekPara);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const history = useHistory();
+
+  useEffect(() => {
+    const mi = formData.ekMalzeme.length >= 10;
+    setIsDisabled(mi);
+  }, [formData.ekMalzeme]);
 
   useEffect(() => {
     setEkUcret(
@@ -53,7 +59,7 @@ function SelectionScreen() {
     }
 
     if (name == "ekMalzeme") {
-      if (checked) {
+      if (checked && formData.ekMalzeme.length < 10) {
         setFormData({ ...formData, [name]: [...formData[name], value] });
       } else {
         setFormData({
@@ -179,6 +185,8 @@ function SelectionScreen() {
                     malzeme={malzeme}
                     key={malzeme}
                     handleFiyat={handleFiyat}
+                    isDisabled={isDisabled}
+                    checked={formData.ekMalzeme.includes(malzeme.toLowerCase())}
                   />
                 );
               })}
