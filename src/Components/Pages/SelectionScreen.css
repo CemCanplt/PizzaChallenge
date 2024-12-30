@@ -69,8 +69,9 @@
 .adet-sayaci p,
 .gizli-adet-sayaci p {
   border: 1px solid #5f5f5f;
+  flex: 1;
   margin: 0;
-  padding: 1rem;
+  padding: 0.9rem;
   justify-content: center;
 }
 
@@ -81,6 +82,7 @@
   border-radius: 0.2rem;
   padding: 1rem;
   margin: 0;
+  flex: 1;
   cursor: pointer;
 }
 
@@ -121,9 +123,9 @@
 }
 
 .siparis-fiyat-odeme {
- width: fit-content;
- display: flex;
- flex-direction: column;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .siparis-ver-tusu {
@@ -170,4 +172,33 @@
 }
 
 @media (max-width: 600px) {
+  .boyut-hamur {
+    gap: unset;
+    justify-content: space-between;
+  }
+
+  .adet-sayaci {
+    display: none;
+  }
+
+  .siparis-hesap,
+  .siparis-fiyat-odeme {
+    width: unset;
+    flex-grow: 1;
+  }
+
+  .gizli-adet-sayaci {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .siparis-ver-tusu {
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .adet-sayaci p,
+  .gizli-adet-sayaci p {
+    padding: 0.8rem;
+  }
 }
