@@ -21,6 +21,18 @@ const malzemeler = [
 function SelectionScreen() {
   const [counter, setCounter] = useState(1);
   const [toplamUcret, setToplamUcret] = useState(110.5);
+  const [ekUcret, setEkUcret] = useState(0)
+
+  function handleFiyat(event) {
+    const {name, value, checked} = event.target
+    if(name === "hamurSecimi") {
+        const ucret = value.match(/\d+/)[0]
+        if(checked) {
+
+        }
+        
+    }
+  }
 
   function counterHandler(event) {
     const { name } = event.target;
@@ -77,7 +89,7 @@ function SelectionScreen() {
                   type="radio"
                   id="kucukPizza"
                   name="hamurSecimi"
-                  value={null}
+                  value="Küçük 0"
                 ></input>
                 <label htmlFor="kucukPizza"> Küçük</label>
               </div>
@@ -86,7 +98,7 @@ function SelectionScreen() {
                   type="radio"
                   id="ortaPizza"
                   name="hamurSecimi"
-                  value={null}
+                  value="Orta 10"
                 ></input>
                 <label htmlFor="ortaPizza"> Orta</label>
               </div>
@@ -95,7 +107,7 @@ function SelectionScreen() {
                   type="radio"
                   id="buyukPizza"
                   name="hamurSecimi"
-                  value={null}
+                  value="Büyük 20"
                 ></input>
                 <label htmlFor="buyukPizza"> Büyük</label>
               </div>
@@ -106,9 +118,9 @@ function SelectionScreen() {
                 <option value="Hamur Seçimi" selected disabled hidden>
                   Hamur Kalınlığı
                 </option>
-                <option value="ince Hamur">İnce Hamur</option>
-                <option value="Orta Hamur">Orta Hamur</option>
-                <option value="Kalın Hamur">Kalın Hamur</option>
+                <option value="İnce Hamur 20">İnce Hamur</option>
+                <option value="Orta Hamur 0">Orta Hamur</option>
+                <option value="Kalın Hamur 10">Kalın Hamur</option>
               </select>
             </div>
           </div>
@@ -146,7 +158,7 @@ function SelectionScreen() {
                 <h4>Sipariş Toplamı</h4>
                 <div className="secimler">
                   <p>Seçimler</p>
-                  <p>25.00₺</p>
+                  <p>{ekUcret}₺</p>
                 </div>
                 <div className="toplam">
                   <p>Toplam</p>
