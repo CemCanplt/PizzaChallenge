@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SelectionScreen.css";
 import Checkbox from "./Mini-Component/Checkbox.jsx";
-import { useHistory } from "react-router-dom";
 import Footer from "./Mini-Component/Footer.jsx";
 
 const malzemeler = [
@@ -20,21 +19,18 @@ const malzemeler = [
   "Kabak",
 ];
 
-const ekPara = {
-  hamurSecimi: 0,
-  hamurTipi: 0,
-  ekMalzeme: [],
-  not: "",
-};
-
-function SelectionScreen({ setCurrentPage }) {
+function SelectionScreen({
+  setCurrentPage,
+  setToplamUcret,
+  toplamUcret,
+  setFormData,
+  formData,
+  setEkUcret,
+  ekUcret,
+}) {
   const [counter, setCounter] = useState(1);
-  const [toplamUcret, setToplamUcret] = useState(110.5);
-  const [ekUcret, setEkUcret] = useState(0);
-  const [formData, setFormData] = useState(ekPara);
+  const [adError, setAdError] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
-
-  const history = useHistory();
 
   useEffect(() => {
     const mi = formData.ekMalzeme.length >= 10;
@@ -73,6 +69,15 @@ function SelectionScreen({ setCurrentPage }) {
     if (name === "not") {
       setFormData({ ...formData, [name]: value });
     }
+
+    if (name === "ismim") {
+      if (value.length >= 3) {
+        setAdError(false);
+        setFormData({ ...formData, [name]: value });
+      } else {
+        setAdError(true);
+      }
+    }
   }
 
   function counterHandler(event) {
@@ -91,7 +96,7 @@ function SelectionScreen({ setCurrentPage }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    history.push("./siparis/basarili");
+    setCurrentPage("finish");
   }
 
   return (
@@ -139,6 +144,7 @@ function SelectionScreen({ setCurrentPage }) {
                     value="0"
                     onChange={handleFiyat}
                     defaultChecked
+                    onInvalid={adError && "İsminiz 3 karakterden kısa olamaz."}
                   ></input>
                   <label htmlFor="kucukPizza"> Küçük</label>
                 </div>
@@ -196,8 +202,24 @@ function SelectionScreen({ setCurrentPage }) {
                 })}
               </div>
             </div>
+            <div className="isminiz">
+              <label htmlFor="ismim">
+                <h2>İsminiz</h2>
+              </label>
+              <input
+                type="text"
+                name="ismim"
+                id="ismim"
+                onChange={handleFiyat}
+              />
+              {adError && (
+                <p className="uyari-ad">İsminiz 3 karakterden kısa olamaz.</p>
+              )}
+            </div>
             <div className="siparis-notu">
-              <h2>Sipariş Notu</h2>
+              <label htmlFor="not">
+                <h2>Sipariş Notu</h2>
+              </label>
               <textarea
                 name="not"
                 id="not"

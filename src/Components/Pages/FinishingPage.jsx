@@ -1,6 +1,6 @@
-import "./FinishingPage.css"
+import "./FinishingPage.css";
 
-function FinishingPage() {
+function FinishingPage({ formData, ekUcret, toplamUcret }) {
   return (
     <>
       <div className="tebrik-ekrani">

@@ -4,8 +4,19 @@ import SelectionScreen from "./Components/Pages/SelectionScreen";
 import FinishingPage from "./Components/Pages/FinishingPage";
 import { useState } from "react";
 
+const ekPara = {
+  hamurSecimi: 0,
+  hamurTipi: 0,
+  ekMalzeme: [],
+  not: "",
+  ismim: "",
+};
+
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
+  const [formData, setFormData] = useState(ekPara);
+  const [toplamUcret, setToplamUcret] = useState(0);
+  const [ekUcret, setEkUcret] = useState(0);
 
   return (
     <div className="pizza-king">
@@ -14,9 +25,23 @@ function App() {
       </header>
       {currentPage === "home" && <MainPage setCurrentPage={setCurrentPage} />}
       {currentPage === "order" && (
-        <SelectionScreen setCurrentPage={setCurrentPage} />
+        <SelectionScreen
+          formData={formData}
+          setFormData={setFormData}
+          setCurrentPage={setCurrentPage}
+          toplamUcret={toplamUcret}
+          setToplamUcret={setToplamUcret}
+          setEkUcret={setEkUcret}
+          ekUcret={ekUcret}
+        />
       )}
-      {currentPage === "finish" && <FinishingPage />}
+      {currentPage === "finish" && (
+        <FinishingPage
+          formData={formData}
+          ekUcret={ekUcret}
+          toplamUcret={toplamUcret}
+        />
+      )}
     </div>
   );
 }
