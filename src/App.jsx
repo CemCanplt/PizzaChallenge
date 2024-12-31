@@ -22,6 +22,7 @@ function App() {
     <div className="pizza-king">
       <header className="never-changing-title">
         <h1>Teknolojik Yemekler</h1>
+        {/* <img src="" alt="teknoYemekLogo" /> */}
       </header>
       {currentPage === "home" && <MainPage setCurrentPage={setCurrentPage} />}
       {currentPage === "order" && (

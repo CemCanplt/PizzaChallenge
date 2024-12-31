@@ -1,0 +1,23 @@
+.navBarTr button {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--primary-white);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+}
+
+.navBarTr button:hover {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+}
+
+.navBarTr {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 0 11rem;
+  flex-wrap: wrap;
+}
