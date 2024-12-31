@@ -33,6 +33,7 @@ function App() {
           setToplamUcret={setToplamUcret}
           setEkUcret={setEkUcret}
           ekUcret={ekUcret}
+          ekPara={ekPara}
         />
       )}
       {currentPage === "finish" && (

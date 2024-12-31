@@ -27,6 +27,7 @@ function SelectionScreen({
   formData,
   setEkUcret,
   ekUcret,
+  ekPara,
 }) {
   const [counter, setCounter] = useState(1);
   const [adError, setAdError] = useState(false);
@@ -76,6 +77,7 @@ function SelectionScreen({
         setFormData({ ...formData, [name]: value });
       } else {
         setAdError(true);
+        setFormData({ ...formData, [name]: value });
       }
     }
   }
@@ -96,6 +98,7 @@ function SelectionScreen({
 
   function handleSubmit(e) {
     e.preventDefault();
+    setFormData(ekPara);
     setCurrentPage("finish");
   }
 
@@ -144,7 +147,6 @@ function SelectionScreen({
                     value="0"
                     onChange={handleFiyat}
                     defaultChecked
-                    onInvalid={adError && "İsminiz 3 karakterden kısa olamaz."}
                   ></input>
                   <label htmlFor="kucukPizza"> Küçük</label>
                 </div>
@@ -211,6 +213,7 @@ function SelectionScreen({
                 name="ismim"
                 id="ismim"
                 onChange={handleFiyat}
+                value={formData.ismim}
               />
               {adError && (
                 <p className="uyari-ad">İsminiz 3 karakterden kısa olamaz.</p>
