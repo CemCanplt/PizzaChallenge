@@ -7,6 +7,7 @@ function MainPage() {
 
   return (
     <div className="main-page">
+      <p id="firsat">fırsatı kaçırma</p>
       <div className="text-pic-gap">
         <p>
           KOD ACIKTIRIR

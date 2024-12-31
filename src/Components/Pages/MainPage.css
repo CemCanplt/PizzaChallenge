@@ -1,13 +1,14 @@
 .main-page {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
   align-items: center;
   background-image: url("../images/iteration-1-images/home-banner.png");
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   flex: 1 1 auto;
+  background-color: #ce2829;
+  height: 100vh;
 }
 
 .text-pic-gap {
@@ -48,6 +49,17 @@
 
 .big-pizza {
   max-width: 70rem;
+}
+
+/* iterasyon 2 */
+
+#firsat {
+  color: #fdc913;
+  font-family: "Satisfy";
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  width: fit-content;
 }
 
 @media (max-width: 600px) {

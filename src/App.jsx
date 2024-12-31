@@ -1,8 +1,10 @@
 import "./App.css";
 import MainPage from "./Components/Pages/MainPage";
-import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Switch } from "react-router-dom";
 import SelectionScreen from "./Components/Pages/SelectionScreen";
 import FinishingPage from "./Components/Pages/FinishingPage";
+import MainPageExtra from "./Components/Pages/MainPageExtra.jsx";
+import Footer from "./Components/Pages/Mini-Component/Footer.jsx";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <MainPage />
+          <MainPageExtra />
         </Route>
         <Route exact path="/siparis">
           <SelectionScreen />
@@ -21,6 +24,7 @@ function App() {
           <FinishingPage />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

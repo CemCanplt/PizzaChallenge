@@ -171,6 +171,8 @@
   display: none;
 }
 
+/* iterasyon 2 */
+
 @media (max-width: 600px) {
   .boyut-hamur {
     gap: unset;

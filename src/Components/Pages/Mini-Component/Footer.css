@@ -1,0 +1,58 @@
+footer {
+  background-color: #292929;
+  color: white;
+  padding: 2rem;
+}
+
+.Logo-iletisim {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footerI {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.TekYemek-HotMenu {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.instagram {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerResimler ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 0.5rem;
+}
+
+.instagram ul {
+  list-style: none;
+  max-width: 20rem;
+}
+
+.ÜstBar {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.AltBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Footerdivider {
+  margin: 0;
+  padding: 0;
+  border: 1px solid #5f5f5f;
+}
