@@ -1,30 +1,22 @@
 import "./App.css";
 import MainPage from "./Components/Pages/MainPage";
-import { Route, Switch } from "react-router-dom";
 import SelectionScreen from "./Components/Pages/SelectionScreen";
 import FinishingPage from "./Components/Pages/FinishingPage";
-import MainPageExtra from "./Components/Pages/MainPageExtra.jsx";
-import Footer from "./Components/Pages/Mini-Component/Footer.jsx";
+import { useState } from "react";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
   return (
     <div className="pizza-king">
       <header className="never-changing-title">
         <h1>Teknolojik Yemekler</h1>
       </header>
-      <Switch>
-        <Route exact path="/">
-          <MainPage />
-          <MainPageExtra />
-        </Route>
-        <Route exact path="/siparis">
-          <SelectionScreen />
-        </Route>
-        <Route path="/siparis/basarili">
-          <FinishingPage />
-        </Route>
-      </Switch>
-      <Footer />
+      {currentPage === "home" && <MainPage setCurrentPage={setCurrentPage} />}
+      {currentPage === "order" && (
+        <SelectionScreen setCurrentPage={setCurrentPage} />
+      )}
+      {currentPage === "finish" && <FinishingPage />}
     </div>
   );
 }

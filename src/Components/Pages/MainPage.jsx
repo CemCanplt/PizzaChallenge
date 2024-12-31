@@ -1,24 +1,25 @@
 import React from "react";
 import "./MainPage.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "./Mini-Component/Footer";
 
-function MainPage() {
-  const history = useHistory();
-
+function MainPage({ setCurrentPage }) {
   return (
-    <div className="main-page">
-      <p id="firsat">fırsatı kaçırma</p>
-      <div className="text-pic-gap">
-        <p>
-          KOD ACIKTIRIR
-          <br />
-          PİZZA, DOYURUR
-        </p>
-        <button className="aciktim" onClick={() => history.push("/siparis")}>
-          ACIKTIM
-        </button>
+    <>
+      <div className="main-page">
+        <p id="firsat">fırsatı kaçırma</p>
+        <div className="text-pic-gap">
+          <p>
+            KOD ACIKTIRIR
+            <br />
+            PİZZA, DOYURUR
+          </p>
+          <button className="aciktim" onClick={() => setCurrentPage("order")}>
+            ACIKTIM
+          </button>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

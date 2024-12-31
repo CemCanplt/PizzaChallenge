@@ -1,7 +1,6 @@
 footer {
   background-color: #292929;
   color: white;
-  padding: 2rem;
 }
 
 .Logo-iletisim {
@@ -43,12 +42,14 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  padding: 1rem 2rem;
 }
 
 .AltBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .Footerdivider {
