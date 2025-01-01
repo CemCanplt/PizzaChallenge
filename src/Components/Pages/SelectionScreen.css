@@ -176,8 +176,6 @@
 }
 
 .isminiz input {
-  border-radius: 0.3rem;
-  border: 1px solid #5f5f5f;
   height: 1.5rem;
 }
 
@@ -231,6 +229,7 @@
   cursor: pointer;
   border-radius: 2rem;
   text-align: center;
+  color: var(--primary-grey);
 }
 
 .label-flex input[type="radio"]:checked + label {
@@ -243,6 +242,7 @@
 .hamur option {
   background-color: var(--bg-white);
   border: 1px solid var(--primary-black);
+  color: var(--primary-grey);
 }
 
 .hamur select {
@@ -255,6 +255,17 @@
   padding: 0 1rem;
   width: 16rem;
   aspect-ratio: 5;
+  color: var(--primary-grey);
+}
+
+/* Sipariş ve İsim arkaplanı */
+
+.isminiz input,
+.siparis-notu textarea {
+  background-color: var(--bg-white);
+  color: var(--primary-grey);
+  border: none;
+  border-radius: 0.4rem;
 }
 
 @media (max-width: 600px) {
