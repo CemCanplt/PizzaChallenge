@@ -89,13 +89,13 @@ main {
   justify-content: center;
 }
 
-.basliklar p {
+.en-cok-paket-metni {
   font-family: "Satisfy";
   color: var(--primary-red);
   font-size: 2rem;
 }
 
-.basliklar p, .basliklar h1 {
+.en-cok-paket-metni, .basliklar h1 {
   text-align: center;
   padding: 0;
   margin: 0;

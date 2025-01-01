@@ -1,26 +1,31 @@
 import "./MainPageExtra.css";
 import React from "react";
 import NavBarEN from "./Mini-Component/NavBarEN";
+import Kart from "./Mini-Component/Kart";
 
-const pizzaVerileri = {
-  "Terminal Pizza": {
+const pizzaVerileri = [
+  {
+    isim: "Terminal Pizza",
     puan: 4.9,
     degerlendirme: 200,
     fiyat: 60,
+    url: "../../images/iteration-2-images/pictures/food-1.png",
   },
-
-  "Position Absolute Acı Pizza": {
+  {
+    isim: "Position Absolute Acı Pizza",
     puan: 4.9,
     degerlendirme: 928,
     fiyat: 85,
+    url: "../../images/iteration-2-images/pictures/food-2.png",
   },
-
-  "useEffect Tavuklu Burger": {
+  {
+    isim: "useEffect Tavuklu Burger",
     puan: 4.9,
-    degerlendirme: 928,
-    fiyat: 85,
+    degerlendirme: 462,
+    fiyat: 75,
+    url: "../../images/iteration-2-images/pictures/food-3.png",
   },
-}
+];
 
 function MainPageExtra() {
   return (
@@ -59,9 +64,14 @@ function MainPageExtra() {
         </section>
         <section className="en-cok-paketlenen">
           <div className="basliklar">
-            <p>en çok paketlenen menüler</p>
+            <p className="en-cok-paket-metni">en çok paketlenen menüler</p>
             <h1>Acıktıran Kodlara Doyuran Lezzetler</h1>
             <NavBarEN />
+            <div className="kart-flex">
+              {pizzaVerileri.map((pizzaVerisi) => (
+                <Kart pizzaVerisi={pizzaVerisi} />
+              ))}
+            </div>
           </div>
         </section>
       </main>

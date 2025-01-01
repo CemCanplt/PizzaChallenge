@@ -1,0 +1,20 @@
+.kare-kart {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 2rem;
+    background-color: var(--primary-white);
+    align-self: center;
+    flex: 1 1 auto;
+    border-radius: 1rem;
+}
+
+.notlandirma {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kart-flex {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 6rem;
+}
