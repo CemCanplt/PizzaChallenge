@@ -1,4 +1,4 @@
-import "./NavBarEN.css"
+import "./NavBarEN.css";
 
 const navButonImgUrl = "../../images/iteration-2-images/icons/";
 
@@ -7,7 +7,7 @@ function NavBarEN() {
     <nav className="navBarEn">
       <button>
         <img src={`${navButonImgUrl}1.svg`} alt="Kore" />
-        <span>YENİ! Kore</span>
+        <span>Ramen</span>
       </button>
 
       <button>
@@ -22,7 +22,7 @@ function NavBarEN() {
 
       <button>
         <img src={`${navButonImgUrl}4.svg`} alt="Patetes" />
-        <span>Kızartmalar</span>
+        <span>French Fries</span>
       </button>
 
       <button>
@@ -32,7 +32,7 @@ function NavBarEN() {
 
       <button>
         <img src={`${navButonImgUrl}6.svg`} alt="İçecek" />
-        <span>Gazlı İçecek</span>
+        <span>Soft Drinks</span>
       </button>
     </nav>
   );

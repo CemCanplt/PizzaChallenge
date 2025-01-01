@@ -14,10 +14,8 @@
   color: var(--primary-white);
 }
 
-.navBarTEn {
+.navBarEn {
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem 0;
-  padding: 0 11rem;
-  flex-wrap: wrap;
+  margin: 2rem 0;
 }

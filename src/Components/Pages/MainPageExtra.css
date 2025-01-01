@@ -80,3 +80,27 @@ main {
 .npm {
   background-image: url("../images/iteration-2-images/cta/kart-3.png");
 }
+
+/* Section 2 Kısmı */
+
+.basliklar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basliklar p {
+  font-family: "Satisfy";
+  color: var(--primary-red);
+  font-size: 2rem;
+}
+
+.basliklar p, .basliklar h1 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.basliklar h1 {
+  font-size: 2rem;
+}
