@@ -44,7 +44,7 @@ function SelectionScreen({
 
   useEffect(() => {
     const hatalarinOzeti = Object.values(errors);
-    const varMi = hatalarinOzeti.includes(true);
+    const varMi = hatalarinOzeti.includes(true) || !Boolean(formData.ismim)
     setIsValid(!varMi);
   }, [errors]);
 
