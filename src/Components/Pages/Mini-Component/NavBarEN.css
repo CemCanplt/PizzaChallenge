@@ -1,4 +1,6 @@
 .navBarEn button {
+  font-family: "Roboto Condensed";
+  font-size: 1rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
