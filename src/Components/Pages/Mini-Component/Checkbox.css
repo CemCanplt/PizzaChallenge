@@ -8,4 +8,30 @@
 .checkbox-container {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+}
+
+/* Checkbox tasarım */
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none; /* Tarayıcı varsayılan stilini kaldır */
+  -webkit-appearance: none;
+  width: 2.2rem;
+  aspect-ratio: 1;
+  background-color: var(--bg-white);
+  border-radius: 0.3rem;
+}
+
+.checkbox-container input[type="checkbox"]:checked:after {
+  font-family: "Material Symbols Outlined";
+  content: "\e5ca";
+  font-size: 1.5rem;
+  background-color: var(--primary-orange);
+  display: flex;
+  color: var(--primary-black);
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  aspect-ratio: 1;
+  border-radius: 0.3rem;
 }

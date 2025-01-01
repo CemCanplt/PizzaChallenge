@@ -15,7 +15,6 @@ html {
 .never-changing-title {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
 }
 
 .never-changing-title h1 {
@@ -28,4 +27,3 @@ html {
   text-align: center;
   padding: 2rem 0;
 }
-
