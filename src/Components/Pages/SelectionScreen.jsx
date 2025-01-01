@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./SelectionScreen.css";
 import Checkbox from "./Mini-Component/Checkbox.jsx";
 import Footer from "./Mini-Component/Footer.jsx";
+import axios from "axios";
 
 const malzemeler = [
   "Pepperoni",
@@ -119,6 +120,18 @@ function SelectionScreen({
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!isValid) {
+      return;
+    }
+
+    axios
+      .post("https://reqres.in/api/pizza ", formData)
+      .then((res) => {
+        return console.log(res.data);
+      })
+      .catch((error) => console.log(error));
+
     setFormData(ekPara);
     setCurrentPage("finish");
   }
