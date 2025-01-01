@@ -21,3 +21,9 @@
 body {
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  html {
+    font-size: 13px;
+  }
+}

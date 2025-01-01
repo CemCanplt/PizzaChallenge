@@ -2,7 +2,7 @@ import "./NavBarEN.css"
 
 const navButonImgUrl = "../../images/iteration-2-images/icons/";
 
-function NavBarTR() {
+function NavBarEN() {
   return (
     <nav className="navBarEn">
       <button>
@@ -38,4 +38,4 @@ function NavBarTR() {
   );
 }
 
-export default NavBarTR;
+export default NavBarEN;
