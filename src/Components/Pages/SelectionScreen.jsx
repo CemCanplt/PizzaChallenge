@@ -71,6 +71,8 @@ function SelectionScreen({
       if (name == "hamurTipi") {
         if (value === "Hamur Seçimi") {
           setErrors({ ...errors, [name]: true });
+        } else {
+          setErrors({ ...errors, [name]: false });
         }
       }
     }
