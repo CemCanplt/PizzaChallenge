@@ -10,7 +10,7 @@ function CheckBox(props) {
         type="checkbox"
         id={id}
         name="ekMalzeme"
-        value={id}
+        value={malzeme}
         onChange={handleFiyat}
         disabled={isDisabled && !checked}
       />

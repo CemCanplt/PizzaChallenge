@@ -19,6 +19,11 @@ const malzemeler = [
   "Kabak",
 ];
 
+const startingErrors = {
+  hamurTipi: true,
+  ismim: false,
+};
+
 function SelectionScreen({
   setCurrentPage,
   setToplamUcret,
@@ -30,8 +35,17 @@ function SelectionScreen({
   ekPara,
 }) {
   const [counter, setCounter] = useState(1);
-  const [adError, setAdError] = useState(false);
+  const [errors, setErrors] = useState(startingErrors);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+
+  // Buraya valid şartını yazacağım
+
+  useEffect(() => {
+    const hatalarinOzeti = Object.values(errors);
+    const varMi = hatalarinOzeti.includes(true);
+    setIsValid(!varMi);
+  }, [errors]);
 
   useEffect(() => {
     const mi = formData.ekMalzeme.length >= 10;
@@ -54,6 +68,11 @@ function SelectionScreen({
     if (name == "hamurSecimi" || name == "hamurTipi") {
       const ucret = Number(value);
       setFormData({ ...formData, [name]: ucret });
+      if (name == "hamurTipi") {
+        if (value === "Hamur Seçimi") {
+          setErrors({ ...errors, [name]: true });
+        }
+      }
     }
 
     if (name == "ekMalzeme") {
@@ -73,10 +92,10 @@ function SelectionScreen({
 
     if (name === "ismim") {
       if (value.length >= 3) {
-        setAdError(false);
+        setErrors({ ...errors, [name]: false });
         setFormData({ ...formData, [name]: value });
       } else {
-        setAdError(true);
+        setErrors({ ...errors, [name]: true });
         setFormData({ ...formData, [name]: value });
       }
     }
@@ -228,7 +247,7 @@ function SelectionScreen({
                   onChange={handleFiyat}
                   value={formData.ismim}
                 />
-                {adError && (
+                {errors.ismim && (
                   <p className="uyari-ad">İsminiz 3 karakterden kısa olamaz.</p>
                 )}
               </div>
@@ -286,7 +305,10 @@ function SelectionScreen({
                         +
                       </button>
                     </div>
-                    <button onClick={() => setCurrentPage("finish")}>
+                    <button
+                      onClick={() => setCurrentPage("finish")}
+                      disabled={!isValid}
+                    >
                       SİPARİŞ VER
                     </button>
                   </div>

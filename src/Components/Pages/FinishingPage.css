@@ -1,16 +1,78 @@
+.finishing-page {
+  display: flex;
+  flex-direction: column;
+  background-color: #ce2829;
+  color: var(--primary-white);
+  align-items: center;
+  gap: 2rem;
+  flex: 1 1 auto;
+}
+
 .tebrik-ekrani {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   background-color: #ce2829;
   text-align: center;
   color: #faf7f2;
-  flex: 1 1 auto
+  align-self: stretch;
 }
 
 .tebrik-ekrani h1 {
   font-family: "Roboto Condensed";
   font-weight: 300; /* Daha ince bir ağırlık */
   font-size: 4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
+
+.tebrik-ekrani p {
+  color: #fdc913;
+  font-family: "Satisfy";
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.finishing-page-divider {
+  width: 50vw;
+  border: 1px solid var(--primary-white);
+}
+
+.siparis-hesapFP {
+  background-color: var(--primary-red);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: fit-content; /* İçerik boyutuna göre genişler */
+  border: 1px solid var(--primary-white);
+}
+
+.siparis-hesapFP h4 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  font-weight: bold;
+}
+
+.siparis-hesapFP .row,
+.siparis-hesapFP .row-total {
+  display: flex;
+  justify-content: space-between; /* Daha iyi hizalama için */
+  gap: 10rem; /* Boşluk miktarını azalt */
+}
+
+.siparis-hesapFP .row span {
+  color: var(--primary-white);
+}
+
+.siparis-hesapFP .row-total span {
+  color: var(--primary-white);
+}
+
+.siparis-fiyat-odemeFP {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
 
