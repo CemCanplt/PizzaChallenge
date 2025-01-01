@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 2rem 2rem 2rem;
-  max-width: 35rem;
   margin: 0 auto;
+  align-items: center;
 }
 
 .aciklama-bilgi {
@@ -25,8 +24,7 @@
 
 .boyut-hamur {
   display: flex;
-  justify-content: flex-start;
-  gap: 10rem;
+  justify-content: space-between;
   align-items: baseline;
 }
 
@@ -37,7 +35,7 @@
 
 .boyut div {
   display: flex;
-  gap: 0.2rem;
+  gap: 1.5rem;
 }
 
 .siparis-notu {
@@ -191,6 +189,73 @@
 }
 
 /* iterasyon 2 */
+
+.krema-arkaplan {
+  background-color: var(--bg-white);
+  padding: 0rem 26rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.kremasiz-arkaplan {
+  padding: 0rem 26rem;
+  padding-bottom: 7rem;
+}
+
+.krema-arkaplan img {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+/* Boyut seçimi */
+.boyut-sec {
+  display: flex;
+  justify-content: space-between;
+}
+
+#kucukPizza,
+#ortaPizza,
+#buyukPizza {
+  display: none;
+}
+
+.boyut-sec label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 3rem;
+  margin: 0;
+  background-color: var(--bg-white);
+  cursor: pointer;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.label-flex input[type="radio"]:checked + label {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+}
+
+/* Hamur Seçimi */
+
+.hamur option {
+  background-color: var(--bg-white);
+  border: 1px solid var(--primary-black);
+}
+
+.hamur select {
+  background-color: var(--bg-white);
+  border: none;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  width: 16rem;
+  aspect-ratio: 5;
+}
 
 @media (max-width: 600px) {
   .boyut-hamur {
