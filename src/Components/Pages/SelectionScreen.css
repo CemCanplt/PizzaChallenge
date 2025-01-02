@@ -17,6 +17,10 @@
   gap: 0.3rem;
 }
 
+.aciklama-bilgi p {
+  text-align: justify;
+}
+
 .para-puan {
   display: flex;
   justify-content: space-between;
@@ -223,8 +227,8 @@
 }
 
 .krema-arkaplan img {
-  flex: 1 1 auto;
-  align-self: center;
+  align-self: stretch;
+  width: 100%;
 }
 
 .krema-arkaplan h1,
@@ -332,5 +336,23 @@
   .adet-sayaci p,
   .gizli-adet-sayaci p {
     padding: 0.8rem;
+  }
+
+  .krema-arkaplan,
+  .kremasiz-arkaplan {
+    padding: 0rem 2rem;
+  }
+
+  .kremasiz-arkaplan {
+    padding-bottom: 2rem;
+  }
+
+  .siparis-hesap .row,
+  .siparis-hesap .row-total {
+    gap: 1rem; /* Daha küçük boşluklar kullanın */
+  }
+
+  .sayfa-yolu p {
+    width: 100%; /* Ekran genişliğine göre ayarlanır */
   }
 }

@@ -65,6 +65,7 @@
 }
 
 @media (max-width: 600px) {
-  .main-page {
+  .text-pic-gap .aciktim {
+    font-size: 1.6rem;
   }
 }
