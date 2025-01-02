@@ -24,7 +24,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .navBarTr {
     width: 25rem;
     padding: 0;

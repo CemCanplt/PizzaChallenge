@@ -211,7 +211,7 @@
 
 .krema-arkaplan {
   background-color: var(--bg-white);
-  padding: 0rem 26rem;
+  padding: 0rem 30vw;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -220,7 +220,7 @@
 }
 
 .kremasiz-arkaplan {
-  padding: 0rem 26rem;
+  padding: 0rem 30vw;
   padding-bottom: 7rem;
   font-family: "Roboto Condensed";
   letter-spacing: 0.01rem;
@@ -307,7 +307,7 @@
   border-radius: 0.4rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .boyut-hamur {
     gap: unset;
     justify-content: space-between;

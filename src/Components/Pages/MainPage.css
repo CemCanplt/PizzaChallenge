@@ -64,7 +64,7 @@
   align-self: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .text-pic-gap .aciktim {
     font-size: 1.6rem;
   }

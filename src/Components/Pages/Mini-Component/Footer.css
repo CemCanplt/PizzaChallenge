@@ -45,14 +45,14 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1rem 11rem;
+  padding: 1rem 11vw;
 }
 
 .AltBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 11rem;
+  padding: 0 11vw;
 }
 
 .Footerdivider {
@@ -61,7 +61,7 @@ footer {
   border: 1px solid #5f5f5f;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .ÜstBar,
   .TekYemek-HotMenu {
     flex-direction: column;

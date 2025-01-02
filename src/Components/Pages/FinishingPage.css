@@ -90,7 +90,7 @@
   flex-direction: column;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .tebrik-ekrani h1 {
     transform: scaleX(1);
   }

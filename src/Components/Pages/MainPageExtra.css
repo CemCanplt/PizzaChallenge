@@ -136,7 +136,7 @@ main {
   font-weight: 600;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1130px) {
   .teklifler {
     flex-direction: column;
   }
