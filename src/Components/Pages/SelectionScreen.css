@@ -9,6 +9,7 @@
 .aciklama-bilgi {
   display: flex;
   flex-direction: column;
+  line-height: 2;
 }
 
 .yildiz-skor {
@@ -20,6 +21,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: "Barlow";
+  color: var(--primary-grey);
+}
+
+.para-puan h1 {
+  color: var(--primary-black);
 }
 
 .boyut-hamur {
@@ -135,11 +142,18 @@
 
 .siparis-ver-tusu button {
   background-color: #fdc913;
+  font-family: "Roboto Condensed";
   cursor: pointer;
   border: none;
   border-radius: 0.3rem;
   padding: 0.7rem;
   flex-grow: 1;
+}
+
+.siparis-ver-asil {
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  font-size: 1rem;
 }
 
 .odeme-bolumu {
@@ -150,8 +164,10 @@
 
 .sayfa-yolu {
   display: flex;
-  justify-content: center;
-  background-color: #ce2829;
+}
+
+.sayfa-yolu span {
+  color: var(--primary-red);
 }
 
 .sayfa-yolu p {
@@ -195,16 +211,27 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  font-family: "Roboto Condensed";
+  letter-spacing: 0.01rem;
 }
 
 .kremasiz-arkaplan {
   padding: 0rem 26rem;
   padding-bottom: 7rem;
+  font-family: "Roboto Condensed";
+  letter-spacing: 0.01rem;
 }
 
 .krema-arkaplan img {
   flex: 1 1 auto;
   align-self: center;
+}
+
+.krema-arkaplan h1,
+.krema-arkaplan h2,
+.kremasiz-arkaplan h1,
+.kremasiz-arkaplan h2 {
+  color: var(--primary-black);
 }
 
 /* Boyut seçimi */
@@ -242,11 +269,18 @@
 
 .hamur option {
   background-color: var(--bg-white);
-  border: 1px solid var(--primary-black);
   color: var(--primary-grey);
+  letter-spacing: 0.01rem;
+  border: none;
+}
+
+.hamur option:hover {
+  background-color: var(--primary-grey);
+  color: var(--primary-white);
 }
 
 .hamur select {
+  letter-spacing: 0.01rem;
   background-color: var(--bg-white);
   border: none;
   border-radius: 0.5rem;

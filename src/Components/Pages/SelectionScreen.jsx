@@ -44,7 +44,7 @@ function SelectionScreen({
 
   useEffect(() => {
     const hatalarinOzeti = Object.values(errors);
-    const varMi = hatalarinOzeti.includes(true) || !Boolean(formData.ismim)
+    const varMi = hatalarinOzeti.includes(true) || !Boolean(formData.ismim);
     setIsValid(!varMi);
   }, [errors]);
 
@@ -149,7 +149,10 @@ function SelectionScreen({
                 src="../images/iteration-2-images/pictures/form-banner.png"
                 alt="form-banner"
               />
-              <h2>Position Absolute Pizza</h2>
+              <p className="sayfa-yolu">
+                Anasayfa - Seçenekler&nbsp;-&nbsp; <span>Sipariş Oluştur</span>
+              </p>
+              <h2>Position Absolute Acı Pizza</h2>
               <div className="aciklama-bilgi">
                 <div className="para-puan">
                   <h1>85.50₺</h1>
@@ -243,9 +246,7 @@ function SelectionScreen({
                         key={malzeme}
                         handleFiyat={handleFiyat}
                         isDisabled={isDisabled}
-                        checked={formData.ekMalzeme.includes(
-                          malzeme.toLowerCase()
-                        )}
+                        checked={formData.ekMalzeme.includes(malzeme)}
                       />
                     );
                   })}
@@ -323,6 +324,7 @@ function SelectionScreen({
                     <button
                       onClick={() => setCurrentPage("finish")}
                       disabled={!isValid}
+                      className="siparis-ver-asil"
                     >
                       SİPARİŞ VER
                     </button>
