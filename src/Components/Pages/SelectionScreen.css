@@ -211,7 +211,7 @@
 
 .krema-arkaplan {
   background-color: var(--bg-white);
-  padding: 0rem 30vw;
+  padding: 0rem 24rem;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -220,7 +220,7 @@
 }
 
 .kremasiz-arkaplan {
-  padding: 0rem 30vw;
+  padding: 0rem 24rem;
   padding-bottom: 7rem;
   font-family: "Roboto Condensed";
   letter-spacing: 0.01rem;

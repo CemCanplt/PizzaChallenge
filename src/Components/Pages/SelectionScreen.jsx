@@ -223,6 +223,7 @@ function SelectionScreen({
                     id="hamurTipi"
                     name="hamurTipi"
                     onChange={handleFiyat}
+                    data-cy="dough-select"
                   >
                     <option value="Hamur Seçimi" selected disabled hidden>
                       -Hamur Kalınlığı Seç-
@@ -257,6 +258,7 @@ function SelectionScreen({
                   <h2>İsminiz</h2>
                 </label>
                 <input
+                  data-cy="isim-girdisi"
                   type="text"
                   name="ismim"
                   id="ismim"
@@ -272,6 +274,7 @@ function SelectionScreen({
                   <h2>Sipariş Notu</h2>
                 </label>
                 <textarea
+                  data-cy="order-note"
                   name="not"
                   id="not"
                   placeholder="Siparişine eklemek istediğin bir not var mı?"
@@ -325,6 +328,7 @@ function SelectionScreen({
                       onClick={() => setCurrentPage("finish")}
                       disabled={!isValid}
                       className="siparis-ver-asil"
+                      data-cy="submit-button"
                     >
                       SİPARİŞ VER
                     </button>

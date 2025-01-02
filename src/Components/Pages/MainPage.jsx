@@ -15,7 +15,7 @@ function MainPage({ setCurrentPage }) {
             <br />
             PİZZA, DOYURUR
           </p>
-          <button className="aciktim" onClick={() => setCurrentPage("order")}>
+          <button className="aciktim" data-cy="acim-butonu" onClick={() => setCurrentPage("order")}>
             ACIKTIM
           </button>
         </div>

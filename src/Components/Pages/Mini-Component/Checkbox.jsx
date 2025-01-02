@@ -9,6 +9,7 @@ function CheckBox(props) {
       <input
         type="checkbox"
         id={id}
+        data-cy="ingredient-checkbox"
         name="ekMalzeme"
         value={malzeme}
         onChange={handleFiyat}
