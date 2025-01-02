@@ -21,3 +21,14 @@
   justify-content: space-between;
   margin: 2rem 0;
 }
+
+@media (max-width: 600px) {
+  .navBarEn {
+    width: 25rem;
+    padding: 0;
+    align-items: center;
+    align-self: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

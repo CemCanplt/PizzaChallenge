@@ -23,3 +23,12 @@
   padding: 0 11rem;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  .navBarTr {
+    width: 25rem;
+    padding: 0;
+    align-items: center;
+    align-self: center;
+  }
+}

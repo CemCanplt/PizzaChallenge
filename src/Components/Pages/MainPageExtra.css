@@ -135,3 +135,22 @@ main {
 .kalin-para-metni {
   font-weight: 600;
 }
+
+@media (max-width: 600px) {
+  .teklifler {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  .Lezzetus {
+    width: unset;
+    height: unset;
+  }
+
+  .hack-npm {
+    flex-grow: 2;
+  }
+}
