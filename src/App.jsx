@@ -10,7 +10,7 @@ const ekPara = {
   ekMalzeme: [],
   not: "",
   ismim: "",
-  hizli: ""
+  hizli: 0,
 };
 
 function App() {

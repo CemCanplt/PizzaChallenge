@@ -314,10 +314,7 @@
   display: flex;
   align-items: center;
   margin-top: 2rem;
-}
-
-.hizli-teslimat label {
-  margin-right: auto;
+  justify-content: space-between;
 }
 
 .hizli-teslimat input[type="checkbox"] {
@@ -327,6 +324,7 @@
   aspect-ratio: 1;
   background-color: var(--bg-white);
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .hizli-teslimat input[type="checkbox"]:checked:after {

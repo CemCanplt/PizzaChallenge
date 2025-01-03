@@ -3,6 +3,7 @@ import "./SelectionScreen.css";
 import Checkbox from "./Mini-Component/Checkbox.jsx";
 import Footer from "./Mini-Component/Footer.jsx";
 import axios from "axios";
+import RadioButon from "./Mini-Component/RadioButon.jsx";
 
 const malzemeler = [
   "Pepperoni",
@@ -18,6 +19,12 @@ const malzemeler = [
   "Sucuk",
   "Ananas",
   "Kabak",
+];
+
+const radioButtons = [
+  { id: "kucukPizza", value: 0, ikon: "S" },
+  { id: "ortaPizza", value: 10, ikon: "M" },
+  { id: "buyukPizza", value: 20, ikon: "L" },
 ];
 
 const hizliTeslimatUcreti = 50;
@@ -57,16 +64,13 @@ function SelectionScreen({
 
   useEffect(() => {
     setEkUcret(
-      formData.hamurSecimi +
-        Number(formData.hizli) +
-        formData.hamurTipi +
-        formData.ekMalzeme.length * 5
+      formData.hamurSecimi + formData.hamurTipi + formData.ekMalzeme.length * 5
     );
   }, [formData, counter]);
 
   useEffect(() => {
-    setToplamUcret((ekUcret + 85.5) * counter);
-  }, [ekUcret, counter]);
+    setToplamUcret((ekUcret + 85.5) * counter + formData.hizli);
+  }, [ekUcret, counter, formData]);
 
   function handleFiyat(event) {
     const { name, value, checked } = event.target;
@@ -197,37 +201,9 @@ function SelectionScreen({
                 <div className="boyut">
                   <h2>Boyut Seç</h2>
                   <div className="boyut-sec">
-                    <div className="label-flex">
-                      <input
-                        type="radio"
-                        id="kucukPizza"
-                        name="hamurSecimi"
-                        value="0"
-                        onChange={handleFiyat}
-                        defaultChecked
-                      ></input>
-                      <label htmlFor="kucukPizza">S</label>
-                    </div>
-                    <div className="label-flex">
-                      <input
-                        type="radio"
-                        id="ortaPizza"
-                        name="hamurSecimi"
-                        value="10"
-                        onChange={handleFiyat}
-                      ></input>
-                      <label htmlFor="ortaPizza">M</label>
-                    </div>
-                    <div className="label-flex">
-                      <input
-                        type="radio"
-                        id="buyukPizza"
-                        name="hamurSecimi"
-                        value="20"
-                        onChange={handleFiyat}
-                      ></input>
-                      <label htmlFor="buyukPizza">L</label>
-                    </div>
+                    {radioButtons.map((buton) => (
+                      <RadioButon handleFiyat={handleFiyat} buton={buton} />
+                    ))}
                   </div>
                 </div>
                 <div className="hamur">
@@ -241,6 +217,8 @@ function SelectionScreen({
                     <option value="Hamur Seçimi" selected disabled hidden>
                       -Hamur Kalınlığı Seç-
                     </option>
+                    {/* 3 satırlık kodu komponent yapmak istemedim işin doğrusu, 
+                    Hamur seçimi butonu disabled olduğu için ana kodda kalsa daha sağlıklı olur gibi geldi */}
                     <option value="20">İnce Hamur</option>
                     <option value="0">Orta Hamur</option>
                     <option value="10">Kalın Hamur</option>
@@ -305,6 +283,7 @@ function SelectionScreen({
                   id="hizli"
                   name="hizli"
                   onChange={handleFiyat}
+                  value={formData.hizli}
                 />
                 {/* <span>₺</span> */}
               </div>
