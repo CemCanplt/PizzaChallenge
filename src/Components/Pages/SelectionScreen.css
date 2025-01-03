@@ -112,6 +112,9 @@
   color: #333;
 }
 
+.hizli-teslimat {
+}
+
 .siparis-hesap .row,
 .siparis-hesap .row-total {
   display: flex;
@@ -305,6 +308,39 @@
   color: var(--primary-grey);
   border: none;
   border-radius: 0.4rem;
+}
+
+.hizli-teslimat {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.hizli-teslimat label {
+  margin-right: auto;
+}
+
+.hizli-teslimat input[type="checkbox"] {
+  appearance: none; /* Tarayıcı varsayılan stilini kaldır */
+  -webkit-appearance: none;
+  width: 3rem;
+  aspect-ratio: 1;
+  background-color: var(--bg-white);
+  border-radius: 0.3rem;
+}
+
+.hizli-teslimat input[type="checkbox"]:checked:after {
+  font-family: var(--her-yerde-bu-var);
+  content: "50₺" /* "\e5ca" */;
+  font-size: 1.3rem;
+  background-color: var(--primary-orange);
+  display: flex;
+  color: var(--primary-black);
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 0.3rem;
 }
 
 @media (max-width: 1130px) {

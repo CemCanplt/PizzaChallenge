@@ -20,6 +20,8 @@ const malzemeler = [
   "Kabak",
 ];
 
+const hizliTeslimatUcreti = 50;
+
 const startingErrors = {
   hamurTipi: true,
   ismim: false,
@@ -55,7 +57,10 @@ function SelectionScreen({
 
   useEffect(() => {
     setEkUcret(
-      formData.hamurSecimi + formData.hamurTipi + formData.ekMalzeme.length * 5
+      formData.hamurSecimi +
+        Number(formData.hizli) +
+        formData.hamurTipi +
+        formData.ekMalzeme.length * 5
     );
   }, [formData, counter]);
 
@@ -100,6 +105,14 @@ function SelectionScreen({
       } else {
         setErrors({ ...errors, [name]: true });
         setFormData({ ...formData, [name]: value });
+      }
+    }
+
+    if (name === "hizli") {
+      if (checked) {
+        setFormData({ ...formData, [name]: hizliTeslimatUcreti });
+      } else {
+        setFormData({ ...formData, [name]: 0 });
       }
     }
   }
@@ -282,6 +295,20 @@ function SelectionScreen({
                   onChange={handleFiyat}
                 ></textarea>
               </div>
+              <div className="hizli-teslimat">
+                <label htmlFor="hizli">
+                  <h2>Süüüpper Hızlı Teslimat</h2>
+                </label>
+
+                <input
+                  type="checkbox"
+                  id="hizli"
+                  name="hizli"
+                  onChange={handleFiyat}
+                />
+                {/* <span>₺</span> */}
+              </div>
+
               <div className="divider"></div>
 
               <div className="odeme-bolumu">
