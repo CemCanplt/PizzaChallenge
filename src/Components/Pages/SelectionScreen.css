@@ -36,6 +36,7 @@
 .boyut-hamur {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   align-items: baseline;
 }
 
@@ -110,9 +111,6 @@
   font-size: 1.1rem;
   margin: 0 0 1rem;
   color: #333;
-}
-
-.hizli-teslimat {
 }
 
 .siparis-hesap .row,
