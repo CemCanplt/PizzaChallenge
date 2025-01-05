@@ -1,4 +1,4 @@
-import "./CheckBox.css";
+import "./Checkbox.css";
 
 function CheckBox(props) {
   const { malzeme, handleFiyat, isDisabled, checked } = props;
